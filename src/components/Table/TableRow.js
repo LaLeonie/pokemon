@@ -21,7 +21,7 @@ const TableRow = ({ pokemon }) => {
         <ImageDisplay image={img} />
       </td>
       <td>{name}</td>
-      <td>{+num}</td>
+      <td data-testid="number">{+num}</td>
       <td>{height}</td>
       <td>{weight}</td>
       <td>

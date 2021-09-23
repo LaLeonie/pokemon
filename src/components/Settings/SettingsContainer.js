@@ -23,8 +23,12 @@ const SettingsContainer = ({
         id="dropdown-basic-button"
         title={sortedField === "num" ? "Number" : "Name"}
       >
-        <Dropdown.Item eventKey="num">Number</Dropdown.Item>
-        <Dropdown.Item eventKey="name">Name</Dropdown.Item>
+        <Dropdown.Item data-testid="number-select" eventKey="num">
+          Number
+        </Dropdown.Item>
+        <Dropdown.Item data-testid="name-select" eventKey="name">
+          Name
+        </Dropdown.Item>
       </DropdownButton>
       <ButtonGroup>
         {["ascending", "descending"].map((type) => (
