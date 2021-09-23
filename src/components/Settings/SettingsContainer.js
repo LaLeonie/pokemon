@@ -1,5 +1,44 @@
 import React from "react";
 import { Dropdown, DropdownButton, ButtonGroup, Button } from "react-bootstrap";
+import styled from "styled-components";
+
+import { BasicButton } from "../elements/Buttons";
+
+const FlexContainer = styled.section`
+  align-items: center;
+  font-size: ${({ theme: { fontSizes } }) => fontSizes.regular};
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+
+  .dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid ${({ theme: { colors } }) => colors.neutrals[500]};
+    border-radius: 0;
+    color: ${({ theme: { colors } }) => colors.neutrals[500]};
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.regular};
+    min-width: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dropdown-toggle:active {
+    background-color: transparent;
+    border-bottom: 2px solid ${({ theme: { colors } }) => colors.neutrals[500]};
+    border-radius: 0;
+    color: ${({ theme: { colors } }) => colors.neutrals[500]};
+  }
+
+  .dropdown-toggle:hover,
+  .dropdown-toggle:focus {
+    background-color: transparent;
+    border: 2px solid ${({ theme: { colors } }) => colors.neutrals[500]};
+    border-bottom: 2px solid ${({ theme: { colors } }) => colors.neutrals[500]};
+    color: ${({ theme: { colors } }) => colors.neutrals[500]};
+  }
+`;
 
 const SettingsContainer = ({
   sortedField,
@@ -16,7 +55,7 @@ const SettingsContainer = ({
   };
 
   return (
-    <section>
+    <FlexContainer>
       Sorted By
       <DropdownButton
         onSelect={handleFilterSelect}
@@ -32,16 +71,16 @@ const SettingsContainer = ({
       </DropdownButton>
       <ButtonGroup>
         {["ascending", "descending"].map((type) => (
-          <Button
-            className={order === type ? "selected" : ""}
+          <BasicButton
+            status={order === type ? "selected" : ""}
             key={type}
             onClick={() => handleChange(type)}
           >
             {type}
-          </Button>
+          </BasicButton>
         ))}
       </ButtonGroup>
-    </section>
+    </FlexContainer>
   );
 };
 
