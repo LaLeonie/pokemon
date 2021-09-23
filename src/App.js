@@ -2,8 +2,8 @@ import React, { useState, useMemo } from "react";
 
 import { useFetch } from "./hooks/useFetch";
 
-import Settings from "./components/Settings";
-import DataDisplay from "./components/DataDisplay";
+import SettingsContainer from "./components/Settings/SettingsContainer";
+import TableContainer from "./components/Table/TableContainer";
 import Layout from "./components/elements/Layout";
 import { Title } from "./components/elements/Title";
 
@@ -15,6 +15,7 @@ function App() {
 
   if (apiData) {
     sortedPokemonList = [...apiData.pokemon];
+    console.log(apiData);
   }
 
   useMemo(() => {
@@ -42,13 +43,13 @@ function App() {
         {!isLoading && serverError && <span>Error in Fetching data ... </span>}
         {!isLoading && apiData && (
           <>
-            <Settings
+            <SettingsContainer
               sortedField={sortedField}
               setSortedField={setSortedField}
               order={order}
               setOrder={setOrder}
             />
-            <DataDisplay pokemonList={sortedPokemonList} />
+            <TableContainer pokemonList={sortedPokemonList} />
           </>
         )}
       </body>

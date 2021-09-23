@@ -4,15 +4,15 @@ import { Table } from "react-bootstrap";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-const DataDisplay = ({ pokemonList }) => {
+const TableContainer = ({ pokemonList }) => {
   return (
-    <div>
+    <section>
       <Table responsive>
         <TableHeader />
         <TableBody pokemonList={pokemonList} />
       </Table>
-    </div>
+    </section>
   );
 };
 
-export default DataDisplay;
+export default TableContainer;

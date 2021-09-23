@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock("./hooks/useFetch");
+
+describe("Testing the happy paths", () => {
+  test("Page renders as expected and data is displayed", () => {
+    render(<App />);
+
+    screen.debug();
+  });
 });

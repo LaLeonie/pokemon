@@ -1,6 +1,6 @@
 import React from "react";
-import ImageDisplay from "./elements/ImageDisplay";
-import ListDisplay from "./elements/ListDisplay";
+import ImageDisplay from "../elements/ImageDisplay";
+import ListDisplay from "../elements/ListDisplay";
 
 const TableRow = ({ pokemon }) => {
   const {

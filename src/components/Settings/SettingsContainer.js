@@ -1,7 +1,12 @@
 import React from "react";
 import { Dropdown, DropdownButton, ButtonGroup, Button } from "react-bootstrap";
 
-const Settings = ({ sortedField, setSortedField, order, setOrder }) => {
+const SettingsContainer = ({
+  sortedField,
+  setSortedField,
+  order,
+  setOrder,
+}) => {
   const handleFilterSelect = (e) => {
     setSortedField(e);
   };
@@ -12,7 +17,7 @@ const Settings = ({ sortedField, setSortedField, order, setOrder }) => {
 
   return (
     <section>
-      Sort By
+      Sorted By
       <DropdownButton
         onSelect={handleFilterSelect}
         id="dropdown-basic-button"
@@ -36,4 +41,4 @@ const Settings = ({ sortedField, setSortedField, order, setOrder }) => {
   );
 };
 
-export default Settings;
+export default SettingsContainer;
