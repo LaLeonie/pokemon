@@ -77,7 +77,8 @@ Estimated Time: 3 hours
     - elements: (shared) presentational UI element components
     - Setting: components related to sorting 
     - Table: components related to data display
-
+- Separation of concern: helper functions extracted into custom hooks or utils files
+- State Management: two states (order, sortingField) are managed with useState
 - testing: focus on integration testing i.e. testing the 'happy paths'
 
 ## Stretch Goals
