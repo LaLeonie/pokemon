@@ -1,14 +1,21 @@
 import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-const Settings = () => {
+const Settings = ({ sortedField, setSortedField }) => {
+  const handleFilterSelect = (e) => {
+    setSortedField(e);
+  };
+
   return (
     <section>
       Sort By
-      <DropdownButton id="dropdown-basic-button" title="Select">
-        <Dropdown.Item>Select</Dropdown.Item>
-        <Dropdown.Item>Name</Dropdown.Item>
-        <Dropdown.Item>Number</Dropdown.Item>
+      <DropdownButton
+        onSelect={handleFilterSelect}
+        id="dropdown-basic-button"
+        title={sortedField}
+      >
+        <Dropdown.Item eventKey="num">Number</Dropdown.Item>
+        <Dropdown.Item eventKey="name">Name</Dropdown.Item>
       </DropdownButton>
     </section>
   );
