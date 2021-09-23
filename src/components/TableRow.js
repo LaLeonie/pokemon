@@ -1,5 +1,6 @@
 import React from "react";
 import ImageDisplay from "./elements/ImageDisplay";
+import ListDisplay from "./elements/ListDisplay";
 
 const TableRow = ({ pokemon }) => {
   console.log(pokemon);
@@ -25,29 +26,17 @@ const TableRow = ({ pokemon }) => {
       <td>{height}</td>
       <td>{weight}</td>
       <td>
-        <ul>
-          {weaknesses.map((el) => (
-            <li key={el}>{el}</li>
-          ))}
-        </ul>
+        <ListDisplay list={weaknesses}></ListDisplay>
       </td>
       <td>
         {next_evolution ? (
-          <ul>
-            {next_evolution.map((el) => (
-              <li key={el.name}>{el.name}</li>
-            ))}
-          </ul>
+          <ListDisplay list={next_evolution} property="name" />
         ) : (
           "no more evolution"
         )}
       </td>
       <td>
-        <ul>
-          {type.map((el) => (
-            <li key={el}>{el}</li>
-          ))}
-        </ul>
+        <ListDisplay list={type}></ListDisplay>
       </td>
     </tr>
   );
