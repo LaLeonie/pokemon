@@ -5,7 +5,7 @@ import { useFetch } from "./hooks/useFetch";
 import SettingsContainer from "./components/Settings/SettingsContainer";
 import TableContainer from "./components/Table/TableContainer";
 import Layout from "./components/elements/Layout";
-import { Title } from "./components/elements/Title";
+import { Title, Subtitle } from "./components/elements/Titles";
 
 function App() {
   const [sortedField, setSortedField] = useState("num");
@@ -36,7 +36,8 @@ function App() {
   return (
     <Layout>
       <header>
-        <Title>Pokemon's List</Title>
+        <Title>Pokemon's Academy</Title>
+        <Subtitle>Meet our finest students</Subtitle>
       </header>
       <body>
         {isLoading && <span>Loading ... </span>}

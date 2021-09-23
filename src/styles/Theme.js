@@ -64,12 +64,12 @@ export const theme = {
     },
   },
   fonts: {
-    regular: ["Neucha", "sans-serif"],
-    display: ["Ranchers", "sans-serif"],
+    regular: ["Montserrat", "sans-serif"],
+    display: ["Sigmar One", "sans-serif"],
   },
   fontSizes: {
     small: "0.875rem",
-    regular: "1rem",
+    regular: "1.2rem",
     regularPlus: "2rem",
     medium: "3rem",
     large: "3.75rem",
