@@ -7,7 +7,7 @@ import TableHeader from "./TableHeader";
 const DataDisplay = () => {
   return (
     <div>
-      <Table>
+      <Table responsive>
         <TableHeader />
         <TableBody />
       </Table>

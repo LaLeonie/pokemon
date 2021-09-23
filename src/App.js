@@ -3,17 +3,20 @@ import React from "react";
 import Settings from "./components/Settings";
 import DataDisplay from "./components/DataDisplay";
 
+import Layout from "./components/elements/Layout";
+import { Title } from "./components/elements/Title";
+
 function App() {
   return (
-    <div className="App">
+    <Layout>
       <header>
-        <h1>Pokemon </h1>
+        <Title>Pokemon </Title>
       </header>
       <body>
         <Settings />
         <DataDisplay />
       </body>
-    </div>
+    </Layout>
   );
 }
 
