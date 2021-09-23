@@ -1,17 +1,18 @@
 import React from "react";
+import { Cell } from "../elements/Cell";
 
 const TableHeader = () => {
   return (
     <thead>
       <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Number</th>
-        <th>Height</th>
-        <th>Weight</th>
-        <th>Weakness</th>
-        <th>Next Evolution</th>
-        <th>Type</th>
+        <Cell header>Image</Cell>
+        <Cell header>Name</Cell>
+        <Cell header>Number</Cell>
+        <Cell header>Height</Cell>
+        <Cell header>Weight</Cell>
+        <Cell header>Weakness</Cell>
+        <Cell header>Next Evolution</Cell>
+        <Cell header>Type</Cell>
       </tr>
     </thead>
   );

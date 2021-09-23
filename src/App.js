@@ -22,7 +22,7 @@ function App() {
     if (sortedPokemonList) {
       return sortList(sortedPokemonList, sortedField, order);
     }
-  }, [sortedField, apiData, order]);
+  }, [sortedPokemonList, sortedField, order]);
 
   return (
     <Layout>
@@ -30,21 +30,20 @@ function App() {
         <Title>Pokemon's Academy</Title>
         <Subtitle>Meet our finest students</Subtitle>
       </header>
-      <body>
-        {isLoading && <span>Loading ... </span>}
-        {!isLoading && serverError && <span>Error in Fetching data ... </span>}
-        {!isLoading && apiData && (
-          <>
-            <SettingsContainer
-              sortedField={sortedField}
-              setSortedField={setSortedField}
-              order={order}
-              setOrder={setOrder}
-            />
-            <TableContainer pokemonList={sortedPokemonList} />
-          </>
-        )}
-      </body>
+
+      {isLoading && <span>Loading ... </span>}
+      {!isLoading && serverError && <span>Error in Fetching data ... </span>}
+      {!isLoading && apiData && (
+        <>
+          <SettingsContainer
+            sortedField={sortedField}
+            setSortedField={setSortedField}
+            order={order}
+            setOrder={setOrder}
+          />
+          <TableContainer pokemonList={sortedPokemonList} />
+        </>
+      )}
     </Layout>
   );
 }

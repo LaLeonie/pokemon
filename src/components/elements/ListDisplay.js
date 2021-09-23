@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 const UnorderedList = styled.ul`
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
 `;
 
 const ListDisplay = ({ list, property }) => {

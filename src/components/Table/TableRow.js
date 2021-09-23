@@ -1,6 +1,7 @@
 import React from "react";
 import ImageDisplay from "../elements/ImageDisplay";
 import ListDisplay from "../elements/ListDisplay";
+import { Cell } from "../elements/Cell";
 
 const TableRow = ({ pokemon }) => {
   const {
@@ -17,26 +18,26 @@ const TableRow = ({ pokemon }) => {
 
   return (
     <tr key={id}>
-      <td>
+      <Cell>
         <ImageDisplay image={img} />
-      </td>
-      <td>{name}</td>
-      <td data-testid="number">{+num}</td>
-      <td>{height}</td>
-      <td>{weight}</td>
-      <td>
+      </Cell>
+      <Cell>{name}</Cell>
+      <Cell data-testid="number">{+num}</Cell>
+      <Cell>{height}</Cell>
+      <Cell>{weight}</Cell>
+      <Cell>
         <ListDisplay list={weaknesses}></ListDisplay>
-      </td>
-      <td>
+      </Cell>
+      <Cell>
         {next_evolution ? (
           <ListDisplay list={next_evolution} property="name" />
         ) : (
           "no more evolution"
         )}
-      </td>
-      <td>
+      </Cell>
+      <Cell>
         <ListDisplay list={type}></ListDisplay>
-      </td>
+      </Cell>
     </tr>
   );
 };
