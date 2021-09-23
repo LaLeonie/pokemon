@@ -1,5 +1,7 @@
 # Pokemon Challenge 
 
+[Live Site](https://optimistic-euclid-542841.netlify.app/)
+
 ## Installation Instructions
 
 <details>
@@ -61,6 +63,8 @@ Estimated Time: 3 hours
 - React Testing Library 
 - React Bootstrap
 - Axios 
+
+- Deployed on Netlify
 
 ## Design Decisions
 - Desktop first design 
