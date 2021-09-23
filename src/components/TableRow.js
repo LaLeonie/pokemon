@@ -18,7 +18,7 @@ const TableRow = ({ pokemon }) => {
   return (
     <tr key={id}>
       <td>
-        <ImageDisplay src={img} />
+        <ImageDisplay image={img} />
       </td>
       <td>{name}</td>
       <td>{+num}</td>
