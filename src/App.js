@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 
 import { useFetch } from "./hooks/useFetch";
+import { sortList } from "./utils/sortList";
 
 import SettingsContainer from "./components/Settings/SettingsContainer";
 import TableContainer from "./components/Table/TableContainer";
@@ -15,22 +16,12 @@ function App() {
 
   if (apiData) {
     sortedPokemonList = [...apiData.pokemon];
-    console.log(apiData);
   }
 
   useMemo(() => {
-    if (apiData) {
-      sortedPokemonList.sort((a, b) => {
-        if (a[sortedField] < b[sortedField]) {
-          return order === "ascending" ? -1 : 1;
-        }
-        if (a[sortedField] > b[sortedField]) {
-          return order === "ascending" ? 1 : -1;
-        }
-        return 0;
-      });
+    if (sortedPokemonList) {
+      return sortList(sortedPokemonList, sortedField, order);
     }
-    return sortedPokemonList;
   }, [sortedField, apiData, order]);
 
   return (
