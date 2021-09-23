@@ -4,7 +4,7 @@ const TableHeader = () => {
   return (
     <thead>
       <tr>
-        <th></th>
+        <th>Image</th>
         <th>Name</th>
         <th>Number</th>
         <th>Height</th>

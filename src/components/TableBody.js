@@ -1,10 +1,12 @@
 import React from "react";
 import TableRow from "./TableRow";
 
-const TableBody = () => {
+const TableBody = ({ pokemonList }) => {
   return (
     <tbody>
-      <TableRow />
+      {pokemonList.map((pokemon) => (
+        <TableRow pokemon={pokemon} />
+      ))}
     </tbody>
   );
 };

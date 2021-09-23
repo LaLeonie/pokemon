@@ -4,12 +4,13 @@ import { Table } from "react-bootstrap";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-const DataDisplay = ({ isLoading, serverError, apiData }) => {
+const DataDisplay = ({ pokemonList }) => {
+  console.log(pokemonList);
   return (
     <div>
       <Table responsive>
         <TableHeader />
-        <TableBody />
+        <TableBody pokemonList={pokemonList} />
       </Table>
     </div>
   );

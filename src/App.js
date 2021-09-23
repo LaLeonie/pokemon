@@ -21,7 +21,7 @@ function App() {
         {!isLoading && apiData && (
           <>
             <Settings />
-            <DataDisplay />
+            <DataDisplay pokemonList={apiData.pokemon} />
           </>
         )}
       </body>
