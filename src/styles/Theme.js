@@ -71,7 +71,7 @@ export const theme = {
     small: "0.875rem",
     regular: "1.2rem",
     regularPlus: "2rem",
-    medium: "3rem",
+    medium: "2.5rem",
     large: "3.75rem",
     xl: "6rem",
     xxl: "10rem",

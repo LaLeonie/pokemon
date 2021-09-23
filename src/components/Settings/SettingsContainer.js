@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown, DropdownButton, ButtonGroup, Button } from "react-bootstrap";
 import styled from "styled-components";
 
-import { BasicButton } from "../elements/Buttons";
+import { BasicButton, ButtonContainer } from "../elements/Buttons";
 
 const FlexContainer = styled.section`
   align-items: center;
@@ -10,6 +10,10 @@ const FlexContainer = styled.section`
   display: flex;
   gap: 1rem;
   padding-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .dropdown-toggle {
     background-color: transparent;
@@ -69,7 +73,7 @@ const SettingsContainer = ({
           Name
         </Dropdown.Item>
       </DropdownButton>
-      <ButtonGroup>
+      <ButtonContainer>
         {["ascending", "descending"].map((type) => (
           <BasicButton
             status={order === type ? "selected" : ""}
@@ -79,7 +83,7 @@ const SettingsContainer = ({
             {type}
           </BasicButton>
         ))}
-      </ButtonGroup>
+      </ButtonContainer>
     </FlexContainer>
   );
 };

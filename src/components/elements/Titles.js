@@ -6,6 +6,10 @@ export const Title = styled.h1`
   font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
 
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.medium};
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -13,4 +17,8 @@ export const Subtitle = styled.p`
   font-size: ${({ theme: { fontSizes } }) => fontSizes.regularPlus};
   text-align: center;
   padding-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.regular};
+  }
 `;
