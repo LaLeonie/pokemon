@@ -8,7 +8,8 @@ import Layout from "./components/elements/Layout";
 import { Title } from "./components/elements/Title";
 
 function App() {
-  const [sortedField, setSortedField] = useState(null);
+  const [sortedField, setSortedField] = useState("num");
+  const [order, setOrder] = useState("ascending");
   const { isLoading, serverError, apiData } = useFetch();
   let sortedPokemonList;
 
@@ -16,20 +17,20 @@ function App() {
     sortedPokemonList = [...apiData.pokemon];
   }
 
-  React.useMemo(() => {
-    if (sortedField !== null) {
+  useMemo(() => {
+    if (apiData) {
       sortedPokemonList.sort((a, b) => {
         if (a[sortedField] < b[sortedField]) {
-          return -1;
+          return order === "ascending" ? -1 : 1;
         }
         if (a[sortedField] > b[sortedField]) {
-          return 1;
+          return order === "ascending" ? 1 : -1;
         }
         return 0;
       });
     }
     return sortedPokemonList;
-  }, [apiData, sortedField]);
+  }, [sortedField, apiData, order]);
 
   return (
     <Layout>
@@ -44,6 +45,8 @@ function App() {
             <Settings
               sortedField={sortedField}
               setSortedField={setSortedField}
+              order={order}
+              setOrder={setOrder}
             />
             <DataDisplay pokemonList={sortedPokemonList} />
           </>

@@ -4,8 +4,8 @@ import TableRow from "./TableRow";
 const TableBody = ({ pokemonList }) => {
   return (
     <tbody>
-      {pokemonList.map((pokemon) => (
-        <TableRow pokemon={pokemon} />
+      {pokemonList.map((pokemon, i) => (
+        <TableRow key={i} pokemon={pokemon} />
       ))}
     </tbody>
   );

@@ -1,9 +1,13 @@
 import React from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Dropdown, DropdownButton, ButtonGroup, Button } from "react-bootstrap";
 
-const Settings = ({ sortedField, setSortedField }) => {
+const Settings = ({ sortedField, setSortedField, order, setOrder }) => {
   const handleFilterSelect = (e) => {
     setSortedField(e);
+  };
+
+  const handleChange = (type) => {
+    setOrder(type);
   };
 
   return (
@@ -12,11 +16,22 @@ const Settings = ({ sortedField, setSortedField }) => {
       <DropdownButton
         onSelect={handleFilterSelect}
         id="dropdown-basic-button"
-        title={sortedField}
+        title={sortedField === "num" ? "Number" : "Name"}
       >
         <Dropdown.Item eventKey="num">Number</Dropdown.Item>
         <Dropdown.Item eventKey="name">Name</Dropdown.Item>
       </DropdownButton>
+      <ButtonGroup>
+        {["ascending", "descending"].map((type) => (
+          <Button
+            className={order === type ? "selected" : ""}
+            key={type}
+            onClick={() => handleChange(type)}
+          >
+            {type}
+          </Button>
+        ))}
+      </ButtonGroup>
     </section>
   );
 };

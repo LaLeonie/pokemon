@@ -3,7 +3,6 @@ import ImageDisplay from "./elements/ImageDisplay";
 import ListDisplay from "./elements/ListDisplay";
 
 const TableRow = ({ pokemon }) => {
-  console.log(pokemon);
   const {
     id,
     img,
