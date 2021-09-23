@@ -1,4 +1,5 @@
 import React from "react";
+import ImageDisplay from "./elements/ImageDisplay";
 
 const TableRow = () => {
   return (

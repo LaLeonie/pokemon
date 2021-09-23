@@ -10,7 +10,7 @@ function App() {
   return (
     <Layout>
       <header>
-        <Title>Pokemon </Title>
+        <Title>Pokemon's List</Title>
       </header>
       <body>
         <Settings />
