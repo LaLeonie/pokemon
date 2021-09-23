@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-const DataDisplay = () => {
+const DataDisplay = ({ isLoading, serverError, apiData }) => {
   return (
     <div>
       <Table responsive>
