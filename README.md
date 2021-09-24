@@ -1,4 +1,4 @@
-# Pokemon Challenge 
+# Pokemon Challenge
 
 [Live Site](https://optimistic-euclid-542841.netlify.app/)
 
@@ -32,21 +32,23 @@ npm test
 
 </details>
 
-## Requirements 
+## Requirements
+
 - [x] Display table with data from [Pokemon API](https://raw.githubusercontent.com/mrtonks/coding_challenges/main/pokedex.json)
-- [x] Display following data for each entry: 
-    * Name
-    * Number
-    * Type
-    * Height
-    * Weight
-    * Weaknesses
-    * Next Evolution
-    * Image
+- [x] Display following data for each entry:
+  - Name
+  - Number
+  - Type
+  - Height
+  - Weight
+  - Weaknesses
+  - Next Evolution
+  - Image
 - [x] Data is sortable by name and number
 - [x] Displays correctly on mobile and desktop
 
 ## Process
+
 - [x] Planning: Wireframe & Component Tree (20 minutes)
 - [x] Scafolding: Set up Repo, React App, Dependencies, File structure, Component Sceletons (40 minutes)
 - [x] Static App: Api Call, Components (30 minutes)
@@ -56,34 +58,38 @@ npm test
 
 Estimated Time: 3 hours
 
-## Tech Stack 
+## Tech Stack
+
 - React (with create-react-app)
 - styled-components
-- Jest 
-- React Testing Library 
+- Jest
+- React Testing Library
 - React Bootstrap
-- Axios 
+- Axios
 
 - Deployed on Netlify
 
 ## Design Decisions
-- Desktop first design 
+
+- Desktop first design
 - Dropdown Selection for sorting by name/number => can be easily extended to other rows
 - Toggle Selection for ascending/descening
 
-## Code Decision 
+## Code Decision
 
-- file structure: components divided into three folders 
-    - elements: (shared) presentational UI element components
-    - Setting: components related to sorting 
-    - Table: components related to data display
+- file structure: components divided into three folders
+  - elements: (shared) presentational UI element components
+  - Setting: components related to sorting
+  - Table: components related to data display
 - Separation of concern: helper functions extracted into custom hooks or utils files
 - State Management: two states (order, sortingField) are managed with useState
 - testing: focus on integration testing i.e. testing the 'happy paths'
 
 ## Stretch Goals
+
 - [ ] Improve accessibility and performance
-- [ ] Improve mobile design by turning rows into cards
+- [x] Improve mobile design by turning rows into cards
+- [ ] Improve data handling in ListDisplay, i.e. dynamic error messsage when no data is available
 - [ ] Improve design overall, particularly use of color
-- [ ] Add Testing for edge cases and unit testing 
+- [ ] Add Testing for edge cases and unit testing
 - [ ] Improve code splitting for styled-components
