@@ -1,9 +1,10 @@
-import { render, screen, within } from "@testing-library/react";
+import { screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 import { customRender } from "./utils/testUtils";
 
 jest.mock("./hooks/useFetch");
+jest.mock("./hooks/useViewport");
 
 describe("Testing the happy paths", () => {
   test("Page renders as expected and data is displayed", () => {
