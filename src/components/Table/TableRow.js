@@ -26,17 +26,13 @@ const TableRow = ({ pokemon }) => {
       <Cell>{height}</Cell>
       <Cell>{weight}</Cell>
       <Cell>
-        <ListDisplay list={weaknesses} />
+        <ListDisplay alignment="center" list={weaknesses} />
       </Cell>
       <Cell>
-        {next_evolution ? (
-          <ListDisplay list={next_evolution} property="name" />
-        ) : (
-          "no more evolution"
-        )}
+        <ListDisplay alignment="center" list={next_evolution} property="name" />
       </Cell>
       <Cell>
-        <ListDisplay list={type} />
+        <ListDisplay alignment="center" list={type} />
       </Cell>
     </tr>
   );

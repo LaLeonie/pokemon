@@ -8,13 +8,15 @@ const UnorderedList = styled.ul`
   flex-wrap: wrap;
   gap: 0.2rem;
   padding-left: 0;
+  justify-content: ${({ alignment }) =>
+    alignment === "center" ? "center" : "flex-start"};
 `;
 
-const ListDisplay = ({ list, property }) => {
+const ListDisplay = ({ list, property, alignment }) => {
   return (
     <>
       {list ? (
-        <UnorderedList>
+        <UnorderedList alignment={alignment}>
           {list.map((el) => (
             <li key={!property ? el : el[property]}>
               <Badge>{!property ? el : el[property]}</Badge>
@@ -22,7 +24,7 @@ const ListDisplay = ({ list, property }) => {
           ))}
         </UnorderedList>
       ) : (
-        <div>"No Data Found"</div>
+        <div>No Data</div>
       )}
     </>
   );

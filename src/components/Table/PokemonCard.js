@@ -30,10 +30,14 @@ const PokemonCard = ({ pokemon }) => {
   const { img, height, name, type, weaknesses, weight, next_evolution, num } =
     pokemon;
 
+  const next_evolutions = next_evolution
+    ? next_evolution.map((obj) => obj.name)
+    : [];
+
   return (
     <CustomCard style={{ width: "100%" }}>
       <Card.Img variant="top" src={img} />
-      <Card.Body>
+      <Card.Body as="div">
         <Card.Title as="h2">{name}</Card.Title>
         <Card.Text>
           <DataDisplay title="Height" data={height} />
@@ -41,15 +45,11 @@ const PokemonCard = ({ pokemon }) => {
 
           <DataDisplay title="Type" data={type} list="true" />
           <DataDisplay title="Weaknesses" data={weaknesses} list="true" />
-
-          <p>
-            Next Evolution:
-            {next_evolution ? (
-              <ListDisplay list={next_evolution} property="name" />
-            ) : (
-              "no more evolution"
-            )}{" "}
-          </p>
+          <DataDisplay
+            title="Next Evolution"
+            data={next_evolutions}
+            list="true"
+          />
         </Card.Text>
       </Card.Body>
       <Card.Footer className="text-muted">{num}</Card.Footer>
