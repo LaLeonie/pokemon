@@ -9,10 +9,11 @@ const FlexContainer = styled.section`
   font-size: ${({ theme: { fontSizes } }) => fontSizes.regular};
   display: flex;
   gap: 1rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    padding-bottom: 2rem;
   }
 
   .dropdown-toggle {

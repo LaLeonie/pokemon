@@ -1,10 +1,12 @@
 import React, { useState, useMemo } from "react";
 
 import { useFetch } from "./hooks/useFetch";
+import { useViewport } from "./hooks/useViewport";
 import { sortList } from "./utils/sortList";
 
 import SettingsContainer from "./components/Settings/SettingsContainer";
-import TableContainer from "./components/Table/TableContainer";
+import DesktopContainer from "./components/Table/DesktopContainer";
+import MobileContainer from "./components/Table/MobileContainer";
 import Layout from "./components/elements/Layout";
 import { Title, Subtitle } from "./components/elements/Titles";
 
@@ -12,6 +14,9 @@ function App() {
   const [sortedField, setSortedField] = useState("num");
   const [order, setOrder] = useState("ascending");
   const { isLoading, serverError, apiData } = useFetch();
+  const { width } = useViewport();
+  const breakpoint = 620;
+
   let sortedPokemonList;
 
   if (apiData) {
@@ -41,7 +46,11 @@ function App() {
             order={order}
             setOrder={setOrder}
           />
-          <TableContainer pokemonList={sortedPokemonList} />
+          {width < breakpoint ? (
+            <MobileContainer pokemonList={sortedPokemonList} />
+          ) : (
+            <DesktopContainer pokemonList={sortedPokemonList} />
+          )}
         </>
       )}
     </Layout>

@@ -15,6 +15,7 @@ export const BasicButton = styled(Button)`
           : colors.neutrals[50]}
       100%
   );
+
   border: 0;
   /* border-radius: 16px; */
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,

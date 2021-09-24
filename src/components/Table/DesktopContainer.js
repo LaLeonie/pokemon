@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-const TableContainer = ({ pokemonList }) => {
+const DesktopContainer = ({ pokemonList }) => {
   return (
     <section>
       <Table responsive>
@@ -15,4 +15,4 @@ const TableContainer = ({ pokemonList }) => {
   );
 };
 
-export default TableContainer;
+export default DesktopContainer;
