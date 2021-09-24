@@ -3,7 +3,6 @@ import { Card } from "react-bootstrap";
 import styled from "styled-components";
 
 import DataDisplay from "../elements/DataDisplay";
-import ListDisplay from "../elements/ListDisplay";
 
 const CustomCard = styled(Card)`
   img {
@@ -24,6 +23,16 @@ const CustomCard = styled(Card)`
   .card-footer {
     text-align: right;
   }
+
+  .flex-container {
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-container div {
+    min-width: 7rem;
+  }
 `;
 
 const PokemonCard = ({ pokemon }) => {
@@ -40,8 +49,10 @@ const PokemonCard = ({ pokemon }) => {
       <Card.Body as="div">
         <Card.Title as="h2">{name}</Card.Title>
         <Card.Text>
-          <DataDisplay title="Height" data={height} />
-          <DataDisplay title="Weight" data={weight} />
+          <div className="flex-container">
+            <DataDisplay title="Height" data={height} />
+            <DataDisplay title="Weight" data={weight} />
+          </div>
 
           <DataDisplay title="Type" data={type} list="true" />
           <DataDisplay title="Weaknesses" data={weaknesses} list="true" />

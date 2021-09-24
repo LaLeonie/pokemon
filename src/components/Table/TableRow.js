@@ -16,6 +16,12 @@ const TableRow = ({ pokemon }) => {
     num,
   } = pokemon;
 
+  const next_evolutions = next_evolution
+    ? next_evolution.map((obj) => obj.name)
+    : [];
+
+  console.log(next_evolutions);
+
   return (
     <tr key={id}>
       <Cell>
@@ -29,7 +35,7 @@ const TableRow = ({ pokemon }) => {
         <ListDisplay alignment="center" list={weaknesses} />
       </Cell>
       <Cell>
-        <ListDisplay alignment="center" list={next_evolution} property="name" />
+        <ListDisplay alignment="center" list={next_evolutions} />
       </Cell>
       <Cell>
         <ListDisplay alignment="center" list={type} />

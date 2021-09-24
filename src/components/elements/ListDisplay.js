@@ -12,14 +12,14 @@ const UnorderedList = styled.ul`
     alignment === "center" ? "center" : "flex-start"};
 `;
 
-const ListDisplay = ({ list, property, alignment }) => {
+const ListDisplay = ({ list, alignment }) => {
   return (
     <>
-      {list ? (
+      {list.length !== 0 ? (
         <UnorderedList alignment={alignment}>
-          {list.map((el) => (
-            <li key={!property ? el : el[property]}>
-              <Badge>{!property ? el : el[property]}</Badge>
+          {list.map((el, i) => (
+            <li key={i}>
+              <Badge>{el}</Badge>
             </li>
           ))}
         </UnorderedList>
