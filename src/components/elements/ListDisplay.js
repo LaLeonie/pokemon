@@ -7,17 +7,24 @@ const UnorderedList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 0.2rem;
+  padding-left: 0;
 `;
 
 const ListDisplay = ({ list, property }) => {
   return (
-    <UnorderedList>
-      {list.map((el) => (
-        <li key={!property ? el : el[property]}>
-          <Badge>{!property ? el : el[property]}</Badge>
-        </li>
-      ))}
-    </UnorderedList>
+    <>
+      {list ? (
+        <UnorderedList>
+          {list.map((el) => (
+            <li key={!property ? el : el[property]}>
+              <Badge>{!property ? el : el[property]}</Badge>
+            </li>
+          ))}
+        </UnorderedList>
+      ) : (
+        <div>"No Data Found"</div>
+      )}
+    </>
   );
 };
 

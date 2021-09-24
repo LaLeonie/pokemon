@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import styled from "styled-components";
 
+import DataDisplay from "../elements/DataDisplay";
 import ListDisplay from "../elements/ListDisplay";
 
 const CustomCard = styled(Card)`
@@ -35,14 +36,12 @@ const PokemonCard = ({ pokemon }) => {
       <Card.Body>
         <Card.Title as="h2">{name}</Card.Title>
         <Card.Text>
-          <p>height: {height}</p>
-          <p>weight: {weight}</p>
-          <p>
-            type: <ListDisplay list={type} />
-          </p>
-          <p>
-            weaknesses: <ListDisplay list={weaknesses} />
-          </p>
+          <DataDisplay title="Height" data={height} />
+          <DataDisplay title="Weight" data={weight} />
+
+          <DataDisplay title="Type" data={type} list="true" />
+          <DataDisplay title="Weaknesses" data={weaknesses} list="true" />
+
           <p>
             Next Evolution:
             {next_evolution ? (
