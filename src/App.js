@@ -32,7 +32,7 @@ function App() {
   return (
     <Layout>
       <header>
-        <Title>Pokemon's Academy</Title>
+        <Title>Pokemon Academy</Title>
         <Subtitle>Meet our finest students</Subtitle>
       </header>
 
